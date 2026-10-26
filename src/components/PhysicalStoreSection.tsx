@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { MapPin, Clock, Phone, Navigation, Copy, Check } from 'lucide-react';
 
 interface PhysicalStoreSectionProps {
