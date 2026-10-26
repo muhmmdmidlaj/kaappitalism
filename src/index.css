@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-black: #0B0B0B;
+    --text-bone: #E9E6DC;
+    --burgundy: #481A20;
+    --charcoal: #292929;
+    --signal-red: #C92127;
+    --muted-olive: #44452D;
+    --cream: #F5F3EC;
+  }
+
+  body {
+    background-color: #0B0B0B;
+    color: #E9E6DC;
+    overflow-x: hidden;
+  }
+
+  /* Custom subtle scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0B0B0B;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #292929;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #C92127;
+  }
+}
+
+/* Subtle film grain texture */
+.bg-grain {
+  background-image: radial-gradient(rgba(233, 230, 220, 0.04) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Postage stamp scalloped border (inspired by the cold brew label) */
+.stamp-border {
+  border: 1px dashed #44452D;
+  position: relative;
+}
+
+/* Brutalist outlined text */
+.text-stroke {
+  -webkit-text-stroke: 1px rgba(233, 230, 220, 0.35);
+  color: transparent;
+}
+.text-stroke-red {
+  -webkit-text-stroke: 1.5px #C92127;
+  color: transparent;
+}
+
+/* Custom animation for marquee */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: 200%;
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Responsive editorial typography clamp */
+.hero-title {
+  font-size: clamp(3.5rem, 11vw, 13rem);
+  line-height: 0.85;
+  letter-spacing: -0.02em;
+}
+
+.section-title {
+  font-size: clamp(2.5rem, 7vw, 6.5rem);
+  line-height: 0.9;
+  letter-spacing: -0.01em;
+}
